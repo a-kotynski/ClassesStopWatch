@@ -33,21 +33,33 @@ namespace ClassesStopWatch
         {
             StopWatch stopWatch = new StopWatch();
             Console.WriteLine("This is a stopwatch. \nType 'start' to start and 'stop' to stop.");
-            var userStart = Console.ReadLine().ToLower().Trim();
-            if (userStart == "start")
+            while (true)
             {
-                stopWatch.Start();
-                Console.WriteLine(stopWatch.Start());
+                var userStart = Console.ReadLine().ToLower().Trim();
+                if (userStart == "start")
+                {
+                    stopWatch.Start();
+                    Console.WriteLine(stopWatch.Start());
+                }
+                Console.WriteLine("Type 'stop' to stop.");
+                var userStop = Console.ReadLine().ToLower().Trim();
+                if (userStop == "stop")
+                {
+                    stopWatch.Stop();
+                    //stopWatch.Result();
+                    Console.WriteLine(stopWatch.Result());
+                }
+                Console.WriteLine("Type 'end' to end.");
+                var userEnd = Console.ReadLine().ToLower().Trim();
+                if (userEnd == "end")
+                {
+                    break;
+                }
+                else
+                {
+                    continue;
+                }
             }
-            Console.WriteLine("Type 'stop' to stop.");
-            var userStop = Console.ReadLine().ToLower().Trim();
-            if (userStop == "stop")
-            {
-                stopWatch.Stop();
-                //stopWatch.Result();
-                Console.WriteLine(stopWatch.Result());
-            }
-
         }
     }
 }
