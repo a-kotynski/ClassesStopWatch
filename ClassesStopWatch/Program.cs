@@ -65,3 +65,6 @@ namespace ClassesStopWatch
         }
     }
 }
+// NOT DONE: We should not be able to start a stopwatch twice in a row
+// (because that may overwrite the initial start time).
+// So the class should throw an InvalidOperationException if its started twice.
